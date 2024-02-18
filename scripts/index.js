@@ -141,3 +141,16 @@ function setBgColorById(elementId) {
   const element = document.getElementById(elementId);
   element.classList.add("bg-orange-400");
 }
+
+//modal
+const openBtn = document.getElementById("submit-btn");
+const closeBtn = document.getElementById("close-modal");
+const modal = document.getElementById("modal");
+
+openBtn.addEventListener("click", function () {
+  modal.classList.add("open");
+});
+
+closeBtn.addEventListener("click", function () {
+  modal.classList.remove("open");
+});

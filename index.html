@@ -28,6 +28,7 @@
         font-family: "Raleway", sans-serif;
       }
     </style>
+    <link rel="stylesheet" href="./style.css" />
     <!-- tailwind custom -->
     <script>
       tailwind.config = {
@@ -200,6 +201,32 @@
                 Button
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <!-- Success Modal Frame -->
+      <div class="modal" id="modal">
+        <div
+          class="flex flex-col justify-center items-center rounded-lg bg-slate-400 w-[718px] p-14"
+        >
+          <div class="text-center">
+            <img src="./images/success.png" alt="" />
+            <h3 class="font-semibold text-2xl text-[#27AE60] mt-4">SUCCESS</h3>
+          </div>
+          <div class="text-center mt-5 mb-5">
+            <h4 class="font-semibold pb-2">
+              Thank you for Booking Our Bus Seats. We are working hard to find
+              the best service and deals for you.
+            </h4>
+            <p class="">Shortly you will find a confirmation in your email.</p>
+          </div>
+          <div>
+            <button
+              id="close-modal"
+              class="btn w-48 rounded-full bg-[#27AE60] border-none text-white"
+            >
+              Continue
+            </button>
           </div>
         </div>
       </div>
