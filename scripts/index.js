@@ -18,8 +18,8 @@ for (const btn of allBtn) {
       const td3 = document.createElement("td");
 
       td1.innerText = selectedSeatNum;
-      td2.innerText = "Economoy";
-      td3.innerText = "500";
+      td2.innerText = "Economy";
+      td3.innerText = "550";
 
       tr.appendChild(td1);
       tr.appendChild(td2);
@@ -35,7 +35,7 @@ for (const btn of allBtn) {
       const totalCostText = totalCost.innerText;
       const totalCostTextValue = parseInt(totalCostText);
 
-      const netTotalCost = totalCostTextValue + 500;
+      const netTotalCost = totalCostTextValue + 550;
 
       //seat count
 
@@ -65,7 +65,7 @@ for (const btn of allBtn) {
             const text = event.target.value;
             const textValue = parseInt(text);
 
-            if (textValue > 0) {
+            if (text.length === 11) {
               document.getElementById("submit-btn").removeAttribute("disabled");
             }
           });
@@ -102,10 +102,15 @@ function applyCoupon() {
       const discountPrice = totalCostTextValue * 0.15;
       const grandTotalCostAfterDiscount = totalCostTextValue - discountPrice;
 
-      const discount = document.getElementById("total-price-div");
-      const p = document.createElement("p");
-      p.innerText = discountPrice;
-      discount.appendChild(p);
+      const discount = document.getElementById("coupon-price-div");
+      const p1 = document.createElement("p");
+      const p2 = document.createElement("p");
+
+      p1.innerText = "You Got Discount:";
+      p2.innerText = "BDT" + discountPrice;
+
+      discount.appendChild(p1);
+      discount.appendChild(p2);
 
       setInnerText("grand-total", grandTotalCostAfterDiscount);
     } else {
@@ -116,10 +121,15 @@ function applyCoupon() {
       const discountPrice = totalCostTextValue * 0.2;
       const grandTotalCostAfterDiscount = totalCostTextValue - discountPrice;
 
-      const discount = document.getElementById("total-price-div");
-      const p = document.createElement("p");
-      p.innerText = discountPrice;
-      discount.appendChild(p);
+      const discount = document.getElementById("coupon-price-div");
+      const p1 = document.createElement("p");
+      const p2 = document.createElement("p");
+
+      p1.innerText = "Your Got Discount";
+      p2.innerText = "BDT" + discountPrice;
+
+      discount.appendChild(p1);
+      discount.appendChild(p2);
 
       setInnerText("grand-total", grandTotalCostAfterDiscount);
     }
@@ -139,7 +149,7 @@ function setInnerText(elementId, value) {
 
 function setBgColorById(elementId) {
   const element = document.getElementById(elementId);
-  element.classList.add("bg-orange-400");
+  element.classList.add("bg-[#1DD100]");
 }
 
 //modal
