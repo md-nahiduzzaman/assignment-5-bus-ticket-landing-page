@@ -72,7 +72,7 @@ for (const btn of allBtn) {
             const text = event.target.value;
             const textValue = parseInt(text);
 
-            if (text.length === 11 && typeof textValue === "number") {
+            if (text.length > 0 && !isNaN(textValue)) {
               document.getElementById("submit-btn").removeAttribute("disabled");
             }
           });
