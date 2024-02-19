@@ -111,7 +111,9 @@
               Yes, you can run unit tests and view the results directly within
               the app. The integrated testing features allow for a streamlined .
             </p>
-            <button class="btn bg-[#1DD100] border-none">Buy Tickets</button>
+            <button id="scrollBtn" class="btn bg-[#1DD100] border-none">
+              Buy Tickets
+            </button>
           </div>
         </div>
       </div>
@@ -167,6 +169,7 @@
 
       <!-- bus ticket -->
       <section
+        id="scrollTo"
         class="bg-[#F7F8F8] border-2 rounded-t-[88px] border-[#1DD100] pt-28 pb-28"
       >
         <div class="container mx-auto">
@@ -534,7 +537,7 @@
                       Total Price:
                     </h4>
                     <h4 class="font-inter font-medium text-[#030712] text-base">
-                      BDT<span id="total-cost">0</span>
+                      BDT <span id="total-cost">0</span>
                     </h4>
                   </div>
                 </div>
@@ -554,7 +557,9 @@
                       class="input w-full"
                     />
                     <button
+                      id="couponBtn"
                       class="btn font-raleway text-base font-bold bg-[#1DD100] text-white"
+                      disabled
                       onclick="applyCoupon()"
                     >
                       Apply
@@ -570,7 +575,7 @@
                     Grand Total:
                   </h4>
                   <h4 class="font-inter font-medium text-[#030712] text-base">
-                    BDT<span id="grand-total">0</span>
+                    BDT <span id="grand-total">0</span>
                   </h4>
                 </div>
               </div>
@@ -599,8 +604,9 @@
                   </div>
                   <input
                     id="phone-number"
-                    type="text"
+                    type="id"
                     placeholder="Enter your phone number"
+                    pattern="[0-9]{11}"
                     class="input input-bordered w-full"
                   />
                 </label>

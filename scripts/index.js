@@ -1,5 +1,12 @@
 // alert();
 
+const scrollBtn = document.getElementById("scrollBtn");
+const scrollTo = document.getElementById("scrollTo");
+
+scrollBtn.addEventListener("click", function () {
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+});
+
 const allBtn = document.getElementsByClassName("seat-btn");
 
 let selectedSeats = [];
@@ -65,13 +72,20 @@ for (const btn of allBtn) {
             const text = event.target.value;
             const textValue = parseInt(text);
 
-            if (text.length === 11) {
+            if (text.length === 11 && typeof textValue === "number") {
               document.getElementById("submit-btn").removeAttribute("disabled");
             }
           });
       }
 
       enableSubmitBtn();
+
+      function enableApplyBtn() {
+        if (selectedSeats.length === 4) {
+          document.getElementById("couponBtn").removeAttribute("disabled");
+        }
+      }
+      enableApplyBtn();
     }
   });
 }
@@ -107,7 +121,7 @@ function applyCoupon() {
       const p2 = document.createElement("p");
 
       p1.innerText = "You Got Discount:";
-      p2.innerText = "BDT" + discountPrice;
+      p2.innerText = "BDT " + discountPrice;
 
       discount.appendChild(p1);
       discount.appendChild(p2);
@@ -125,7 +139,7 @@ function applyCoupon() {
       const p1 = document.createElement("p");
       const p2 = document.createElement("p");
 
-      p1.innerText = "Your Got Discount";
+      p1.innerText = "Discount price";
       p2.innerText = "BDT" + discountPrice;
 
       discount.appendChild(p1);
