@@ -139,7 +139,7 @@ function applyCoupon() {
       const p1 = document.createElement("p");
       const p2 = document.createElement("p");
 
-      p1.innerText = "Discount price";
+      p1.innerText = "Discount price:";
       p2.innerText = "BDT " + discountPrice;
 
       discount.appendChild(p1);
